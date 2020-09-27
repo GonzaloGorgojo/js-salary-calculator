@@ -1,0 +1,189 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier Prime', monospace;
+}
+
+/*titulo de la pagina*/
+.tituloPrincipal {
+    background-color: rgb(228, 228, 228);
+    width: 50%;
+    margin:20px 0px 20px 25%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #997d7d;
+    border-radius: 5%;
+    font-size: 25px;
+}
+
+/* Primeras 3 tablas*/
+#tablaSueldos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 400px;
+    background-color: rgb(238, 236, 236);
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid grey;
+}
+
+#tablaSueldos .sueldoBruto{
+    width: 350px;
+    margin-top: 10px;
+    height: 200px;
+    border-collapse: collapse; 
+}
+#tablaSueldos .sueldoBruto .sueldoBruto_titulo{
+    font-size: 6vh;
+    border-bottom: black solid 1px;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+}
+#tablaSueldos .sueldoBruto p{
+    font-size: 4vh;
+    text-align: justify;
+}
+#tablaSueldos .sueldoBruto input{
+    height: 30px;
+    font-size: 3vh;
+    width: 150px;
+}
+
+#tablaSueldos .descuentos{
+    width: 450px;
+    height: 333px;
+    margin-top: 10px;
+    border-collapse: collapse;
+    text-align: justify;
+}
+#tablaSueldos .descuentos .descuentos_titulo{
+    font-size: 6vh;
+    border-bottom: black solid 1px;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+}
+#tablaSueldos .descuentos p{
+    font-size: 4vh;
+}
+#tablaSueldos .descuentos input{
+    height: 30px;
+    font-size: 3vh;
+    width: 150px;
+}
+
+#tablaSueldos .sueldoNeto{
+    width: 350px;
+    margin-top: 10px;
+    height: 200px;
+    border-collapse: collapse;
+    text-align: justify;
+}
+#tablaSueldos .sueldoNeto .sueldoNeto_titulo{
+    font-size: 6vh;
+    font-family: 'Work Sans', sans-serif;
+    border-bottom: black solid 1px;
+    text-align: center;
+}
+#tablaSueldos .sueldoNeto p{
+    font-size: 4vh;
+}
+#tablaSueldos .sueldoNeto input{
+    height: 30px;
+    font-size: 3vh;
+    width: 150px;
+}
+
+/* segundos titulos*/
+.tituloSecundario h2 {
+    background-color: rgb(228, 228, 228);
+    width: 80%;
+    margin:20px 0px 20px 10%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #997d7d;
+    border-radius: 5%;
+    font-size: 35px;
+}
+.tituloSecundario p{
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* segundas 3 tablas*/
+#tablaAlcance{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 400px;
+    background-color: rgb(238, 236, 236);
+    margin: 0px 10px 10px 10px;
+    border: 1px solid grey;
+}
+
+#tablaAlcance .pizza{
+    width: 330px;
+    margin-top: 10px;
+    height: 333px;
+    border-collapse: collapse;
+    text-align: justify;
+}
+#tablaAlcance .pizza .pizza_titulo{
+    font-size: 6vh;
+    border-bottom: black solid 1px;
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+}
+#tablaAlcance .pizza p{
+    font-size: 4vh;
+}
+#tablaAlcance .pizza input{
+    height: 30px;
+    font-size: 3vh;
+    width: 150px;
+}
+
+#tablaAlcance .cerveza{
+    width: 450px;
+    height: 267px;
+    margin-top: 10px;
+    border-collapse: collapse;
+    text-align: justify;
+}
+#tablaAlcance .cerveza .cerveza_titulo{
+    font-size: 6vh;
+    border-bottom: black solid 1px;
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+}
+#tablaAlcance .cerveza p{
+    font-size: 4vh;
+}
+#tablaAlcance .cerveza input{
+    height: 30px;
+    font-size: 3vh;
+    width: 150px;
+}
+
+#tablaAlcance .criptomoneda{
+    width: 390px;
+    margin-top: 10px;
+    height: 200px;
+    border-collapse: collapse;
+    text-align: justify;
+}
+#tablaAlcance .criptomoneda .criptomoneda_titulo{
+    font-size: 6vh;
+    border-bottom: black solid 1px;
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+}
+#tablaAlcance .criptomoneda p{
+    font-size: 4vh;
+}
+#tablaAlcance .criptomoneda input{
+    height: 30px;
+    font-size: 3vh;
+    width: 150px;
+}
