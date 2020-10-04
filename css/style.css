@@ -16,6 +16,20 @@
     font-size: 25px;
 }
 
+/*Boton Para Comenza*/
+.botonCalculadora {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.botonCalculadora button {
+    width: 100px;
+    height: 30px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
 /* Primeras 3 tablas*/
 #tablaSueldos{
     display: flex;
@@ -23,8 +37,7 @@
     justify-content: space-evenly;
     height: 400px;
     background-color: rgb(238, 236, 236);
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 20px 10px 0px 10px;
     border: 1px solid grey;
 }
 
@@ -44,10 +57,21 @@
     font-size: 4vh;
     text-align: justify;
 }
-#tablaSueldos .sueldoBruto input{
+#tablaSueldos .sueldoBruto .sueldoBruto_mensual{
     height: 30px;
-    font-size: 3vh;
+    font-size: 4vh;
     width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}
+#tablaSueldos .sueldoBruto .sueldoBruto_anual{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
 }
 
 #tablaSueldos .descuentos{
