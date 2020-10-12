@@ -28,9 +28,9 @@ function llamarAmbas() {
     elementoCreado_texto();
 }
 
-/*
-
-*/
+var btnAceptar=document.getElementById("boton");
+var disableButton = function() { this.disabled = true; };
+btnAceptar.addEventListener('click', disableButton , false);
 
 function sueldoBruto(){
     var consulta_mensual = document.getElementById("inputSueldo").value;
