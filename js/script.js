@@ -3,6 +3,7 @@ function elementoCreado(){
     var contenedor = document.createElement("INPUT");
     contenedor.style.margin = '10px';
     contenedor.style.fontSize = '30px';
+    contenedor.style.width = '150px';
     contenedor.setAttribute("id", "inputSueldo");
 
     var agregar = document.getElementById("nuevoElemento");
@@ -32,6 +33,7 @@ var btnAceptar=document.getElementById("boton");
 var disableButton = function() { this.disabled = true; };
 btnAceptar.addEventListener('click', disableButton , false);
 
+
 function sueldoBruto(){
     var consulta_mensual = document.getElementById("inputSueldo").value;
     var sueldoBruto_mensual = document.getElementsByClassName("sueldoBruto_mensual");
@@ -42,8 +44,9 @@ function sueldoBruto(){
     var sueldoBruto_anual = document.getElementsByClassName("sueldoBruto_anual");
     sueldoBruto_anual[0].innerHTML = calculoBruto_anual;
 
+    guardarSueldo();
+    crearJSON();
 }
-
 
 
 function calculoSueldo(evento){
@@ -54,8 +57,19 @@ function calculoSueldo(evento){
 
 }
 
+function guardarSueldo(){
+    sessionStorage.sueldoUsuario = document.getElementById("inputSueldo").value;
+}
 
+function crearJSON(){
+     var usuario = {
+        "nombre":null,
+        "sueldo Bruto": document.getElementById("inputSueldo").value,
+        "sueldo Neto": null,
 
+    }
+    console.log(usuario["sueldo Bruto"]);
+}
 
 
 
