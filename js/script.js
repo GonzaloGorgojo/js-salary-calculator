@@ -1,4 +1,3 @@
-
 function elementoCreado(){
     var contenedor = document.createElement("INPUT");
     contenedor.style.margin = '10px';
@@ -9,7 +8,20 @@ function elementoCreado(){
     var agregar = document.getElementById("nuevoElemento");
     document.body.insertBefore(contenedor, agregar);
 
-    document.getElementById("inputSueldo").addEventListener("keypress", calculoSueldo);
+    $("#inputSueldo").on('keypress', function(e){if(e.which == 13){sueldoBruto()}});
+    
+    ejecutarResaltar();
+}
+
+function ejecutarResaltar(){
+    $("#inputSueldo").hover(resaltar, desmarcar)
+
+    function resaltar(){
+    $ (this).css("borderColor", "red")
+    }
+    function desmarcar(){
+    $ (this).css("borderColor", "silver")
+    }
 }
 
 function elementoCreado_texto(){
@@ -48,14 +60,6 @@ function sueldoBruto(){
     crearJSON();
 }
 
-
-function calculoSueldo(evento){
-
-    if (evento.which == 13) {
-        sueldoBruto();
-    }
-
-}
 
 function guardarSueldo(){
     sessionStorage.sueldoUsuario = document.getElementById("inputSueldo").value;
