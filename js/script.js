@@ -1,6 +1,7 @@
 function elementoCreado(){
     var contenedor = document.createElement("INPUT");
     contenedor.style.margin = '10px';
+    contenedor.style.marginLeft = '35px';
     contenedor.style.fontSize = '30px';
     contenedor.style.width = '150px';
     contenedor.setAttribute("id", "inputSueldo");
@@ -28,7 +29,7 @@ function elementoCreado_texto(){
     var texto = document.createElement("p");
     var parrafo = document.createTextNode("Ingrese su sueldo bruto y presione la tecla Enter al Finalizar!");
     texto.style.fontSize = '25px';
-    texto.style.marginLeft = '10px';
+    texto.style.marginLeft = '35px';
     texto.style.fontWeight = 'bold';
     texto.appendChild(parrafo);
 
@@ -39,7 +40,13 @@ function elementoCreado_texto(){
 function llamarAmbas() {
     elementoCreado();
     elementoCreado_texto();
+    datosAJAX();
 }
+
+$("#boton").click(function(){ 
+    $("div#afiliado").show(); 
+  });
+  
 
 var btnAceptar=document.getElementById("boton");
 var disableButton = function() { this.disabled = true; };
@@ -75,15 +82,29 @@ function crearJSON(){
     console.log(usuario["sueldo Bruto"]);
 }
 
+function datosAJAX(){ 
+    $.ajax({
+        url: "datos.json",
+        type: "GET",
+        dataType: "json"
+    }).done( function(resultadoJson) {
+
+        for(var i = 0; i < resultadoJson.cantidad; i++ ){
+        console.log(resultadoJson.datosComparaciones[i].nombre)
+        } 
+    }).fail(function (xhr, status, error) {
+        console.log(xhr); console.log(status); console.log(error);
+       })
+}
+
+  
 
 
 
 
 
 
-//let sueldoNeto_mensual;
-//let sueldoNeto_anual;
-//let calculoSueldo;
+
 
 /*
 function nuevaPizza(tamanio, gusto){
@@ -105,6 +126,3 @@ var cerveza3 = ["Botella"];
 
 alert("Los tamaños de cerveza son " + cerveza1.concat(cerveza2, cerveza3));
 */
-
-
-

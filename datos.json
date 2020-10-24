@@ -1,0 +1,50 @@
+{
+    "datosComparaciones": [
+        {
+            "id": "1",
+            "nombre": "Pizza Chica",
+            "valor": "300"
+        },
+        {
+            "id": "2",
+            "nombre": "Pizza Grande",
+            "valor": "600"
+        },
+        {
+            "id": "3",
+            "nombre": "Pizza Comun",
+            "valor": "400"
+        },
+        {
+            "id": "4",
+            "nombre": "Pizza Especial",
+            "valor": "800"
+        },
+        {
+            "id": "5",
+            "nombre": "Cerveza Lata",
+            "valor": "150"
+        },
+        {
+            "id": "6",
+            "nombre": "Cerveza Pinta",
+            "valor": "240"
+        },
+        {
+            "id": "7",
+            "nombre": "Cerveza Botella",
+            "valor": "200"
+        },
+        {
+            "id": "8",
+            "nombre": "Bitcoin",
+            "valor": "1015022"
+        },
+        {
+            "id": "9",
+            "nombre": "Dai",
+            "valor": "190"
+        }
+    ],
+    "cantidad": "9"
+}

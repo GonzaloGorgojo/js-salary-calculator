@@ -17,10 +17,19 @@
     <div class="botonCalculadora">
         <p>Para calcular Su Sueldo Apriete <button id="boton" onclick="llamarAmbas()">AQUI</button></p>
     </div>
+
+    <div id="afiliado">
+    <p class="texto_afiliado">Esta Usted Afiliado a algun Sindicato?</p>
+    <input type="radio" class="si">
+    <label for="si">SI</label><br>
+    <input type="radio" class="no">
+    <label for="no">NO</label><br>
+    </div>
+    
     <div id="nuevoElemento"></div>
     <div id="otroElemento"></div>
 
-
+    
     <div id="tablaSueldos">
         <table class="sueldoBruto">
         <tr>
@@ -38,23 +47,23 @@
         <hr>
         <table class="descuentos">
         <tr>
-            <th colspan="2"><p class="descuentos_titulo">Descuentos realizados</p></th>
+            <th colspan="2"><p class="descuentos_titulo">Descuentos Realizados</p></th>
         </tr>
         <tr>
             <th><p>Obra Social</p></th>
-            <th><input type="number"></th>
+            <th><p class="descuentos_obraSocial"></p></th>
         </tr>
         <tr>
             <th><p>Afiliacion</p></th>
-            <th><input type="number"></th>
+            <th><p class="descuentos_afiliacion"></p></th>
         </tr>
         <tr>
             <th><p>Jubilacion</p></th>
-            <th><input type="number"></th>
+            <th><p class="descuentos_jubilacion"></p></th>
         </tr>
         <tr>
             <th><p>Ganancias</p></th>
-            <th><input type="number"></th>
+            <th><p class="descuentos_ganacias"></p></th>
         </tr>
         </table>
         <hr>
@@ -64,11 +73,11 @@
         </tr>
         <tr>
             <th><p>Mensual</p></th>
-            <th><input type="number"></th>
+            <th><p class="sueldoNeto_mensual"></p></th>
         </tr>
         <tr>
             <th><p>Anual</p></th>
-            <th><input type="number"></th>
+            <th><p class="sueldoNeto_anual"></p></th>
         </tr>
         </table>
     </div>
@@ -85,19 +94,19 @@
         </tr>
         <tr>
             <th><p>Chica</p></th>
-            <th><input type="number"></th>
+            <th><p class="pizza_chica"></p></th>
         </tr>
         <tr>
             <th><p>Grande</p></th>
-            <th><input type="number"></th>
+            <th><p class="pizza_grande"></p></th>
         </tr>
         <tr>
             <th><p>Comun</p></th>
-            <th><input type="number"></th>
+            <th><p class="pizza_comun"></p></th>
         </tr>
         <tr>
             <th><p>Especial</p></th>
-            <th><input type="number"></th>
+            <th><p class="pizza_especial"></p></th>
         </tr>
         </table>
         <hr>
@@ -107,15 +116,15 @@
         </tr>
         <tr>
             <th><p>Lata</p></th>
-            <th><input type="number"></th>
+            <th><p class="cerveza_lata"></p></th>
         </tr>
         <tr>
             <th><p>Pinta</p></th>
-            <th><input type="number"></th>
+            <th><p class="cerveza_pinta"></p></th>
         </tr>
         <tr>
             <th><p>Botella</p></th>
-            <th><input type="number"></th>
+            <th><p class="cerveza_botella"></p></th>
         </tr>
         </table>
         <hr>
@@ -125,11 +134,11 @@
         </tr>
         <tr>
             <th><p>Bitcoin</p></th>
-            <th><input type="number"></th>
+            <th><p class="criptomoneda_bitcoin"></p></th>
         </tr>
         <tr>
             <th><p>Dai</p></th>
-            <th><input type="number"></th>
+            <th><p class="criptomoneda_dai"></p></th>
         </tr>
         </table>
     </div>

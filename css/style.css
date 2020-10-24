@@ -6,7 +6,7 @@
 
 /*titulo de la pagina*/
 .tituloPrincipal {
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(220, 235, 137);
     width: 50%;
     margin:20px 0px 20px 25%;
     display: flex;
@@ -21,14 +21,39 @@
     margin: 10px;
     font-size: 20px;
     font-weight: bold;
+    margin-left: 35px;
 }
 .botonCalculadora button {
     width: 100px;
     height: 30px;
     font-size: 25px;
     font-weight: bold;
+    background-color: rgb(220, 235, 137);
 }
 
+/*Parte Afiliacion*/
+#afiliado {
+    display: none;
+    width: 550px;
+    height: 100px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin-left: 35px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#afiliado .si{
+    margin-top: 10px;
+    width: 17px;
+    height: 17px;
+}
+#afiliado .no{
+    width: 17px;
+    height: 17px;
+    margin-top: 10px;
+}
 
 /* Primeras 3 tablas*/
 #tablaSueldos{
@@ -36,16 +61,18 @@
     flex-direction: row;
     justify-content: space-evenly;
     height: 400px;
-    background-color: rgb(238, 236, 236);
     margin: 20px 10px 0px 10px;
-    border: 1px solid grey;
 }
-
+#tablaSueldos hr{
+    height: 360px;
+}
 #tablaSueldos .sueldoBruto{
     width: 350px;
     margin-top: 10px;
     height: 200px;
-    border-collapse: collapse; 
+    border-collapse: collapse;
+    background-color: rgb(220, 235, 137);
+    border-radius: 10px;    
 }
 #tablaSueldos .sueldoBruto .sueldoBruto_titulo{
     font-size: 6vh;
@@ -56,6 +83,7 @@
 #tablaSueldos .sueldoBruto p{
     font-size: 4vh;
     text-align: justify;
+    margin-left: 10px;
 }
 #tablaSueldos .sueldoBruto .sueldoBruto_mensual{
     height: 30px;
@@ -75,11 +103,13 @@
 }
 
 #tablaSueldos .descuentos{
-    width: 450px;
+    width: 460px;
     height: 333px;
     margin-top: 10px;
     border-collapse: collapse;
     text-align: justify;
+    background-color: rgb(220, 235, 137);
+    border-radius: 10px;
 }
 #tablaSueldos .descuentos .descuentos_titulo{
     font-size: 6vh;
@@ -89,11 +119,37 @@
 }
 #tablaSueldos .descuentos p{
     font-size: 4vh;
+    margin-left: 10px;
 }
-#tablaSueldos .descuentos input{
+#tablaSueldos .descuentos .descuentos_obraSocial{
     height: 30px;
-    font-size: 3vh;
+    font-size: 4vh;
     width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}
+#tablaSueldos .descuentos .descuentos_afiliacion{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}#tablaSueldos .descuentos .descuentos_jubilacion{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}#tablaSueldos .descuentos .descuentos_ganacias{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
 }
 
 #tablaSueldos .sueldoNeto{
@@ -102,6 +158,8 @@
     height: 200px;
     border-collapse: collapse;
     text-align: justify;
+    background-color: rgb(220, 235, 137);
+    border-radius: 10px;
 }
 #tablaSueldos .sueldoNeto .sueldoNeto_titulo{
     font-size: 6vh;
@@ -111,16 +169,28 @@
 }
 #tablaSueldos .sueldoNeto p{
     font-size: 4vh;
+    margin-left: 10px;
 }
-#tablaSueldos .sueldoNeto input{
+#tablaSueldos .sueldoNeto .sueldoNeto_mensual{
     height: 30px;
-    font-size: 3vh;
+    font-size: 4vh;
     width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}
+#tablaSueldos .sueldoNeto .sueldoNeto_anual{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
 }
 
 /* segundos titulos*/
 .tituloSecundario h2 {
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(241, 177, 177);
     width: 80%;
     margin:20px 0px 20px 10%;
     display: flex;
@@ -130,7 +200,7 @@
     font-size: 35px;
 }
 .tituloSecundario p{
-    margin: 10px;
+    margin: 10px 0px 0px 35px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -141,9 +211,10 @@
     flex-direction: row;
     justify-content: space-evenly;
     height: 400px;
-    background-color: rgb(238, 236, 236);
     margin: 0px 10px 10px 10px;
-    border: 1px solid grey;
+}
+#tablaAlcanc hr {
+    height: 360px;
 }
 
 #tablaAlcance .pizza{
@@ -152,6 +223,8 @@
     height: 333px;
     border-collapse: collapse;
     text-align: justify;
+    background-color: rgb(241, 177, 177);
+    border-radius: 10px;
 }
 #tablaAlcance .pizza .pizza_titulo{
     font-size: 6vh;
@@ -161,11 +234,39 @@
 }
 #tablaAlcance .pizza p{
     font-size: 4vh;
+    margin-left: 10px;
 }
-#tablaAlcance .pizza input{
+#tablaAlcance .pizza .pizza_chica{
     height: 30px;
-    font-size: 3vh;
+    font-size: 4vh;
     width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}
+#tablaAlcance .pizza .pizza_grande{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}
+#tablaAlcance .pizza .pizza_comun{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}
+#tablaAlcance .pizza .pizza_especial{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
 }
 
 #tablaAlcance .cerveza{
@@ -174,6 +275,8 @@
     margin-top: 10px;
     border-collapse: collapse;
     text-align: justify;
+    background-color: rgb(241, 177, 177);
+    border-radius: 10px;
 }
 #tablaAlcance .cerveza .cerveza_titulo{
     font-size: 6vh;
@@ -183,11 +286,31 @@
 }
 #tablaAlcance .cerveza p{
     font-size: 4vh;
+    margin-left: 10px;
 }
-#tablaAlcance .cerveza input{
+#tablaAlcance .cerveza .cerveza_lata{
     height: 30px;
-    font-size: 3vh;
+    font-size: 4vh;
     width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}
+#tablaAlcance .cerveza .cerveza_pinta{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}
+#tablaAlcance .cerveza .cerveza_botella{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
 }
 
 #tablaAlcance .criptomoneda{
@@ -196,6 +319,8 @@
     height: 200px;
     border-collapse: collapse;
     text-align: justify;
+    background-color: rgb(241, 177, 177);
+    border-radius: 10px;
 }
 #tablaAlcance .criptomoneda .criptomoneda_titulo{
     font-size: 6vh;
@@ -205,9 +330,21 @@
 }
 #tablaAlcance .criptomoneda p{
     font-size: 4vh;
+    margin-left: 10px;
 }
-#tablaAlcance .criptomoneda input{
+#tablaAlcance .criptomoneda .criptomoneda_bitcoin{
     height: 30px;
-    font-size: 3vh;
+    font-size: 4vh;
     width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+}
+#tablaAlcance .criptomoneda .criptomoneda_dai{
+    height: 30px;
+    font-size: 4vh;
+    width: 150px;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
 }
