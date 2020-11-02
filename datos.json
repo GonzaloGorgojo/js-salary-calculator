@@ -33,18 +33,8 @@
         {
             "id": "7",
             "nombre": "Cerveza Botella",
-            "valor": "200"
-        },
-        {
-            "id": "8",
-            "nombre": "Bitcoin",
-            "valor": "1015022"
-        },
-        {
-            "id": "9",
-            "nombre": "Dai",
-            "valor": "190"
+            "valor": "250"
         }
     ],
-    "cantidad": "9"
+    "cantidad": "7"
 }

@@ -1,18 +1,22 @@
 function elementoCreado(){
     var contenedor = document.createElement("INPUT");
-    contenedor.style.margin = '10px';
-    contenedor.style.marginLeft = '35px';
-    contenedor.style.fontSize = '30px';
-    contenedor.style.width = '150px';
+    contenedor.style.margin = '2vh 0 2vh 5vw';
+    contenedor.style.marginLeft = '3vw';
+    contenedor.style.fontSize = '1rem';
+    contenedor.style.width = '30vw';
+    contenedor.style.height = '5vh';
     contenedor.setAttribute("id", "inputSueldo");
+    contenedor.setAttribute("type", "number");
+    contenedor.setAttribute("step", "any");
 
     var agregar = document.getElementById("nuevoElemento");
     document.body.insertBefore(contenedor, agregar);
 
-    $("#inputSueldo").on('keypress', function(e){if(e.which == 13){sueldoBruto()}});
-    
+    $("#inputSueldo").on('keypress', function(e){if(e.which == 13){sueldoBruto(); descuentos()}});
     ejecutarResaltar();
 }
+
+
 
 function ejecutarResaltar(){
     $("#inputSueldo").hover(resaltar, desmarcar)
@@ -27,10 +31,11 @@ function ejecutarResaltar(){
 
 function elementoCreado_texto(){
     var texto = document.createElement("p");
-    var parrafo = document.createTextNode("Ingrese su sueldo bruto y presione la tecla Enter al Finalizar!");
-    texto.style.fontSize = '25px';
-    texto.style.marginLeft = '35px';
+    var parrafo = document.createTextNode("Ingrese su sueldo bruto sin puntos ni comas y presione la tecla Enter al Finalizar!");
+    texto.style.fontSize = '1rem';
+    texto.style.marginLeft = '3vw';
     texto.style.fontWeight = 'bold';
+    texto.style.width = '90vw';
     texto.appendChild(parrafo);
 
     var algo = document.getElementById("otroElemento");
@@ -40,7 +45,6 @@ function elementoCreado_texto(){
 function llamarAmbas() {
     elementoCreado();
     elementoCreado_texto();
-    datosAJAX();
 }
 
 $("#boton").click(function(){ 
@@ -53,76 +57,128 @@ var disableButton = function() { this.disabled = true; };
 btnAceptar.addEventListener('click', disableButton , false);
 
 
+
 function sueldoBruto(){
     var consulta_mensual = document.getElementById("inputSueldo").value;
     var sueldoBruto_mensual = document.getElementsByClassName("sueldoBruto_mensual");
-    sueldoBruto_mensual[0].innerHTML = consulta_mensual;
+    sueldoBruto_mensual[0].innerHTML = parseInt(consulta_mensual);
 
-    var calculoBruto_anual = (consulta_mensual * 12);
+    var calculoBruto_anual = parseInt((consulta_mensual * 12));
 
     var sueldoBruto_anual = document.getElementsByClassName("sueldoBruto_anual");
     sueldoBruto_anual[0].innerHTML = calculoBruto_anual;
 
     guardarSueldo();
-    crearJSON();
+}
+
+
+function descuentos(){
+ var consulta_mensual = $("#inputSueldo").val();
+
+ var obraSocial = $(".descuentos_obraSocial");
+ var afiliacion = $(".descuentos_afiliacion");
+ var jubilacion = $(".descuentos_jubilacion");
+ var ganancias = $(".descuentos_ganacias");
+
+ obraSocial[0].innerHTML = (consulta_mensual * 4 / 100);
+ jubilacion[0].innerHTML = (consulta_mensual * 14 / 100);
+
+if($('input[name=siafiliado]:checked').length > 0){
+    afiliacion[0].innerHTML = (consulta_mensual * 2 / 100);
+}
+else {
+    afiliacion[0].innerHTML = 0;
+}
+
+if( consulta_mensual >= 80000){
+    ganancias[0].innerHTML = (consulta_mensual * 4 / 100);
+} 
+else {
+    ganancias[0].innerHTML = 0;
+}
+sueldoNeto()
+}
+
+function sueldoNeto(){
+    var consulta_mensual = $("#inputSueldo").val();
+
+    var sueldoNeto_mensual = $(".sueldoNeto_mensual");
+    var sueldoNeto_anual = $(".sueldoNeto_anual");
+    sueldoNeto_mensual[0].innerHTML = (consulta_mensual - $(".descuentos_obraSocial").html() - $(".descuentos_afiliacion").html() - $(".descuentos_jubilacion").html() - $(".descuentos_ganacias").html());
+    sueldoNeto_anual[0].innerHTML = (sueldoNeto_mensual[0].innerHTML * 12);
+
+    JSONusuario();
+    valorCripto();
+    compraPizzas();
+    compraCerveza();
 }
 
 
 function guardarSueldo(){
-    sessionStorage.sueldoUsuario = document.getElementById("inputSueldo").value;
+    sessionStorage.sueldoBrutoUsuario = document.getElementById("inputSueldo").value;
 }
 
-function crearJSON(){
+function JSONusuario(){
      var usuario = {
-        "nombre":null,
-        "sueldo Bruto": document.getElementById("inputSueldo").value,
-        "sueldo Neto": null,
-
+        "nombre": 'Usuario Anonimo',
+        "sueldo Bruto Mensual": document.getElementById("inputSueldo").value,
+        "sueldo Neto Mensual": $(".sueldoNeto_mensual").html(),
     }
-    console.log(usuario["sueldo Bruto"]);
+    console.log(usuario);
 }
 
-function datosAJAX(){ 
+
+function compraPizzas(){ 
     $.ajax({
         url: "datos.json",
         type: "GET",
         dataType: "json"
-    }).done( function(resultadoJson) {
+    }).done( function(resultado) {
+        var pizzaChica = $(".pizza_chica");
+        var pizzaGrande =  $(".pizza_grande");
+        var pizzaComun = $(".pizza_comun");
+        var pizzaEspecial = $(".pizza_especial");
 
-        for(var i = 0; i < resultadoJson.cantidad; i++ ){
-        console.log(resultadoJson.datosComparaciones[i].nombre)
-        } 
+        pizzaChica[0].innerHTML = parseInt(($(".sueldoNeto_mensual").html() / resultado.datosComparaciones[0].valor));
+        pizzaGrande[0].innerHTML = parseInt(($(".sueldoNeto_mensual").html() / resultado.datosComparaciones[1].valor));
+        pizzaComun[0].innerHTML = parseInt(($(".sueldoNeto_mensual").html() / resultado.datosComparaciones[2].valor));
+        pizzaEspecial[0].innerHTML = parseInt(($(".sueldoNeto_mensual").html() / resultado.datosComparaciones[3].valor));
+ 
     }).fail(function (xhr, status, error) {
         console.log(xhr); console.log(status); console.log(error);
        })
 }
 
-  
+function compraCerveza(){ 
+    $.ajax({
+        url: "datos.json",
+        type: "GET",
+        dataType: "json"
+    }).done( function(resultado) {
+        var cervezaLata = $(".cerveza_lata");
+        var cervezaPinta =  $(".cerveza_pinta");
+        var cervezaBotella = $(".cerveza_botella");
 
-
-
-
-
-
-
-
-/*
-function nuevaPizza(tamanio, gusto){
-    this.tamanio = tamanio;
-    this.gusto = gusto;
+        cervezaLata[0].innerHTML = parseInt(($(".sueldoNeto_mensual").html() / resultado.datosComparaciones[4].valor));
+        cervezaPinta[0].innerHTML = parseInt(($(".sueldoNeto_mensual").html() / resultado.datosComparaciones[5].valor));
+        cervezaBotella[0].innerHTML = parseInt(($(".sueldoNeto_mensual").html() / resultado.datosComparaciones[6].valor));
+ 
+    }).fail(function (xhr, status, error) {
+        console.log(xhr); console.log(status); console.log(error);
+       })
 }
 
-var pizza1 = new nuevaPizza("chica");
-var pizza2 = new nuevaPizza("grande");
-var pizza3 = new nuevaPizza("comun");
-var pizza4 = new nuevaPizza("especial");
+function valorCripto() {
+    $.ajax({
+        url: "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=ars",
+        type: "GET",
+        dataType: "json"
+    }).done( function(resultado) {
+        var bitcoin = $(".criptomoneda_bitcoin");
+        bitcoin[0].innerHTML = ($(".sueldoNeto_mensual").html() / resultado.bitcoin.ars).toFixed(8);   
+    }).fail(function (xhr, status, error) {
+        console.log(xhr); console.log(status); console.log(error);
+       })
+}
 
-console.log(pizza1, pizza2)
-
-
-var cerveza1 = ["Lata"];
-var cerveza2 = ["Pinta"];
-var cerveza3 = ["Botella"];
-
-alert("Los tamaños de cerveza son " + cerveza1.concat(cerveza2, cerveza3));
-*/
+ 
