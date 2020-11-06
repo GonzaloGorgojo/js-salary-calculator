@@ -56,6 +56,9 @@
 }
 
 /* Primeras 3 tablas*/
+#ocultarTablas {
+    display: none;
+}
 #tablaSueldos{
     display: flex;
     flex-direction: row;
@@ -264,7 +267,7 @@
 }
 #tablaAlcance .pizza .pizza_chica{
     height: 30px;
-    font-size: 4vh;
+    font-size: 3vh;
     width: 150px;
     border: solid 1px black;
     text-align: center;
@@ -275,7 +278,7 @@
 }
 #tablaAlcance .pizza .pizza_grande{
     height: 30px;
-    font-size: 4vh;
+    font-size: 3vh;
     width: 150px;
     border: solid 1px black;
     text-align: center;
@@ -286,7 +289,7 @@
 }
 #tablaAlcance .pizza .pizza_comun{
     height: 30px;
-    font-size: 4vh;
+    font-size: 3vh;
     width: 150px;
     border: solid 1px black;
     text-align: center;
@@ -297,7 +300,7 @@
 }
 #tablaAlcance .pizza .pizza_especial{
     height: 30px;
-    font-size: 4vh;
+    font-size: 3vh;
     width: 150px;
     border: solid 1px black;
     text-align: center;
@@ -328,7 +331,7 @@
 }
 #tablaAlcance .cerveza .cerveza_lata{
     height: 30px;
-    font-size: 4vh;
+    font-size: 3vh;
     width: 150px;
     border: solid 1px black;
     text-align: center;
@@ -339,7 +342,7 @@
 }
 #tablaAlcance .cerveza .cerveza_pinta{
     height: 30px;
-    font-size: 4vh;
+    font-size: 3vh;
     width: 150px;
     border: solid 1px black;
     text-align: center;
@@ -350,7 +353,7 @@
 }
 #tablaAlcance .cerveza .cerveza_botella{
     height: 30px;
-    font-size: 4vh;
+    font-size: 3vh;
     width: 150px;
     border: solid 1px black;
     text-align: center;
@@ -381,7 +384,7 @@
 }
 #tablaAlcance .criptomoneda .criptomoneda_bitcoin{
     height: 30px;
-    font-size: 4vh;
+    font-size: 3vh;
     width: 200px;
     border: solid 1px black;
     text-align: center;
