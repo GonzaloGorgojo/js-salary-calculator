@@ -16,6 +16,7 @@ Es Simple:
 ### :computer: Como esta hecha ?
 
 * La estructura y el diseño estan hechos con HTML y CSS.
+* Diseño responsive.
 * La logica esta hecha con javascript y Jquery.
 * Las animaciones/efectos estan hechos con JQUERY.
 * Llamada a API sobre el valor de criptomonedas esta hecha con Jquery/AJAX.
