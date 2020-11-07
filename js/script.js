@@ -18,7 +18,6 @@ function crearInputSueldo() {
     if (e.which == 13) {
         sueldoBruto();
         descuentos();
-        mostrarContenidoTablas();
     }
   })
   resaltarInputSueldo();
@@ -64,9 +63,7 @@ $("#boton").click(function () {
   $("#boton").attr("disabled", true);
 });
 
-function mostrarContenidoTablas() {
-  $("#ocultarTablas").show();
-}
+
 
 function sueldoBruto() {   
   var consulta_mensual = $("#inputSueldo").val();
