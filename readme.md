@@ -3,7 +3,7 @@
 
 ### 👉 De que se trata ?
 
-Esta una calculadora para calcular el sueldo en Argentina y para que nos alcanza ese sueldo.
+Esta es una calculadora que muestra cual es el sueldo en Argentina luego de realizar los correspondientes descuentos y para representar que podemos comprar con el.
 
 
 ### 🤔 Como usarla ?
@@ -44,4 +44,4 @@ Luego de finalizar la ejecucion de la funcion para calcular el sueldo Neto, se e
 
 Y eso es todo, asi es como funciona !!
 
-### Esta calculadora fue hecha por [Gonzalo Gorgojo!](https://www.linkedin.com/in/gonzalogorgojo/), sientanse libres de escribirme por cualquier consulta o mejora que quieran hacer !s
+### Esta calculadora fue hecha por [Gonzalo Gorgojo!](https://www.linkedin.com/in/gonzalogorgojo/), sientanse libres de escribirme por cualquier consulta o mejora que quieran hacer !
